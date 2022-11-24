@@ -1,4 +1,4 @@
-package com.zenika.soccerbetting.betting.domain.port.stub;
+package com.zenika.soccerbetting.betting.ports;
 
 import com.zenika.soccerbetting.betting.domain.gambler.GamblerId;
 import com.zenika.soccerbetting.betting.domain.ports.ValidateBetRepository;

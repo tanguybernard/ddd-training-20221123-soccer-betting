@@ -19,7 +19,7 @@ public class ChooseBet {
     private ValidateBetRepository validateBetRepository;
     private ChooseBetService chooseBetService;
 
-    ChooseBet(
+    public ChooseBet(
             BetRepository betRepository,
             GamblerRepository gamblerRepository,
             ValidateBetRepository validateBetRepository,
@@ -32,11 +32,13 @@ public class ChooseBet {
         this.chooseBetService = chooseBetService;
     }
     
-    public ValidateBet chooseBet(String betId, String gamblerId) throws BetTYpeAlreadyExist {
+    public ValidateBet chooseBet(ChooseBetDto dto) throws BetTYpeAlreadyExist, MoneyBetMustBeSupToZero {
 
 
-        Bet bet = this.betRepository.getBetById(new BetId(betId));
-        Gambler gambler = this.gamblerRepository.getGamblerById(new GamblerId(gamblerId));
+        Bet bet = this.betRepository.getBetById(new BetId(dto.betId));
+        Gambler gambler = this.gamblerRepository.getGamblerById(new GamblerId(dto.gamblerId));
+
+        MoneyBet.create(dto.money, dto.currency);
 
         ValidateBet validate = this.chooseBetService.choose(bet, gambler);
 

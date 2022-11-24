@@ -1,10 +1,7 @@
-package com.zenika.soccerbetting.betting.domain.port.stub;
+package com.zenika.soccerbetting.betting.ports;
 
-import com.zenika.soccerbetting.betting.domain.bet.Bet;
-import com.zenika.soccerbetting.betting.domain.bet.BetId;
 import com.zenika.soccerbetting.betting.domain.gambler.Gambler;
 import com.zenika.soccerbetting.betting.domain.gambler.GamblerId;
-import com.zenika.soccerbetting.betting.domain.ports.BetRepository;
 import com.zenika.soccerbetting.betting.domain.ports.GamblerRepository;
 
 import java.util.HashMap;

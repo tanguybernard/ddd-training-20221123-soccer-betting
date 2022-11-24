@@ -1,12 +1,10 @@
-package com.zenika.soccerbetting.betting.domain.port.stub;
+package com.zenika.soccerbetting.betting.ports;
 
 import com.zenika.soccerbetting.betting.domain.bet.Bet;
 import com.zenika.soccerbetting.betting.domain.bet.BetId;
 import com.zenika.soccerbetting.betting.domain.ports.BetRepository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class InMemoryBetRepository implements BetRepository {
