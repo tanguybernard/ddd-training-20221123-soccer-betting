@@ -1,9 +1,10 @@
 package com.zenika.soccerbetting.betting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.zenika.soccerbetting.betting.application.ChooseBetDto;
-import com.zenika.soccerbetting.betting.domain.bet.BetId;
-import com.zenika.soccerbetting.betting.domain.gambler.GamblerId;
+import com.zenika.soccerbetting.betting.presentation.BetDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -41,5 +41,9 @@ public class ChooseBetIntegrationTest {
                 .getResponse();
 
         assertThat(response.getStatus()).isEqualTo(201);
+        String responseBody = response.getContentAsString();
+        BetDto responseDto
+                = new Gson().fromJson(responseBody, BetDto.class);
+        assertThat(responseDto.gamblerId()).isEqualTo("gambler");
     }
 }

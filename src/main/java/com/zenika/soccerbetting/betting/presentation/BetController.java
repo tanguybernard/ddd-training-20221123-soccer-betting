@@ -4,6 +4,7 @@ import com.zenika.soccerbetting.betting.application.ChooseBet;
 import com.zenika.soccerbetting.betting.application.ChooseBetDto;
 import com.zenika.soccerbetting.betting.domain.validate_bet.BetTYpeAlreadyExist;
 import com.zenika.soccerbetting.betting.domain.validate_bet.MoneyBetMustBeSupToZero;
+import com.zenika.soccerbetting.betting.domain.validate_bet.ValidateBet;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,13 +23,19 @@ public class BetController {
     }
 
     @PostMapping
-    public ResponseEntity<ChooseBet> chooseBet(@RequestBody ChooseBetDto chooseBetDto) {
+    public ResponseEntity<BetDto> chooseBet(@RequestBody ChooseBetDto chooseBetDto) {
+        ValidateBet validateBet;
         try {
-
-            chooseBet.chooseBet(chooseBetDto);
+            validateBet = chooseBet.chooseBet(chooseBetDto);
         } catch (BetTYpeAlreadyExist | MoneyBetMustBeSupToZero e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.toDto(validateBet));
     }
+
+
+    private BetDto toDto(ValidateBet bet){
+        return new BetDto(bet.getId().value, bet.getGamblerId().value);
+    }
+
 }
