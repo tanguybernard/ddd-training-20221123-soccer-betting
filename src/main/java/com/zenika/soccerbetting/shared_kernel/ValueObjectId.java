@@ -2,7 +2,7 @@ package com.zenika.soccerbetting.shared_kernel;
 
 public class ValueObjectId<T> {
 
-    private T id;
+    public T id;
 
     protected ValueObjectId(T id) {
 

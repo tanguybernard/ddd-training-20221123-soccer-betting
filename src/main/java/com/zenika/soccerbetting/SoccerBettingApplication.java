@@ -11,9 +11,4 @@ public class SoccerBettingApplication {
         ConfigurableApplicationContext context =
                 SpringApplication.run(SoccerBettingApplication.class, args);
     }
-
-
-
-
-
 }
