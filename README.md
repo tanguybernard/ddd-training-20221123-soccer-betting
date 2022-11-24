@@ -4,7 +4,7 @@
 
 ## Event Storming
 
-![soccer_bet_event_storming](https://user-images.githubusercontent.com/14818169/203829793-d342c3fd-82af-4cd2-8c66-c9feff72fea1.jpg)
+![soccer_bet_event_storming](https://user-images.githubusercontent.com/14818169/203830273-438a9aeb-d652-425e-b53b-adb6771bd6b5.jpg)
 
 
 ## Bounded Context Pari
