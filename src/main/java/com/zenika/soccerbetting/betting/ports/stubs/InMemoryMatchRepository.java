@@ -20,4 +20,9 @@ public class InMemoryMatchRepository implements MatchRepository {
     public Match getMatchById(MatchId matchId) {
         return  matchMap.get(matchId.id);
     }
+
+    @Override
+    public void delete(Match match) {
+
+    }
 }

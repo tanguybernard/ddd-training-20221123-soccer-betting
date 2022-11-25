@@ -9,4 +9,6 @@ public interface MatchRepository {
 
     void save(Match match);
     Match getMatchById(MatchId matchId);
+
+    void delete(Match match);
 }

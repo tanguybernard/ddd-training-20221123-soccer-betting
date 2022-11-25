@@ -1,5 +1,6 @@
 package com.zenika.soccerbetting.betting.ports.stubs;
 
+import com.zenika.soccerbetting.betting.domain.bet.BetId;
 import com.zenika.soccerbetting.betting.domain.gambler.GamblerId;
 import com.zenika.soccerbetting.betting.domain.ports.ValidateBetRepository;
 import com.zenika.soccerbetting.betting.domain.validate_bet.ValidateBet;
@@ -22,6 +23,11 @@ public class InMemoryValidateBetRepository implements ValidateBetRepository {
 
     @Override
     public List<ValidateBet> getByGamblerId(GamblerId gamblerId) {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public List<ValidateBet> getValidateBetsByBetId(BetId id) {
         return Collections.emptyList();
     }
 

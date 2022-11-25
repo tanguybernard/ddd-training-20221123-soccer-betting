@@ -1,6 +1,7 @@
 package com.zenika.soccerbetting.configuration;
 
 
+import com.zenika.soccerbetting.betting.application.CancelMatch;
 import com.zenika.soccerbetting.betting.application.ChooseBet;
 import com.zenika.soccerbetting.betting.domain.ports.BetRepository;
 import com.zenika.soccerbetting.betting.domain.ports.GamblerRepository;
@@ -51,5 +52,11 @@ public class DIConfiguration {
     public ChooseBet chooseBet() {
         ValidateBetRepository validateBetRepository = validateBetRepository();
         return new ChooseBet(betRepository(), gamblerRepository(), validateBetRepository, new ChooseBetService(validateBetRepository));
+    }
+
+    @Bean
+    public CancelMatch cancelMatch() {
+        ValidateBetRepository validateBetRepository = validateBetRepository();
+        return new CancelMatch(betRepository(), gamblerRepository(), validateBetRepository, new ChooseBetService(validateBetRepository), matchRepository());
     }
 }

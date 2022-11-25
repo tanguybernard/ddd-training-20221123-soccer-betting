@@ -38,4 +38,9 @@ public class PgBetValidateRepository implements ValidateBetRepository {
     public List<ValidateBet> getByGamblerId(GamblerId gamblerId) {
         return Collections.emptyList();
     }
+
+    @Override
+    public List<ValidateBet> getValidateBetsByBetId(BetId id) {
+        return Collections.emptyList();
+    }
 }

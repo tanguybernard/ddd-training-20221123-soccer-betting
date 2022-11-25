@@ -9,4 +9,9 @@ public class Match extends AggregateRoot<MatchId> {
     public Match(MatchId matchId) {
         super(matchId);
     }
+
+
+    public void cancel(){
+        this.record(new MatchCancelled(this.id));
+    }
 }

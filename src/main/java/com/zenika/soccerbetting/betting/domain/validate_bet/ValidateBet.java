@@ -34,4 +34,9 @@ public class ValidateBet extends AggregateRoot<ValidateBetId> {
     public GamblerId getGamblerId() {
         return this.gamblerId;
     }
+
+    public void cancel() {
+
+    }
+
 }
