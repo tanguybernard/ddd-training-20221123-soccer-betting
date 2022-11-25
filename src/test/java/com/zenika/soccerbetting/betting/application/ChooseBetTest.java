@@ -5,15 +5,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.zenika.soccerbetting.betting.domain.bet.BetId;
 import com.zenika.soccerbetting.betting.domain.gambler.GamblerId;
 
+import com.zenika.soccerbetting.betting.domain.match.MatchId;
 import com.zenika.soccerbetting.betting.domain.validate_bet.BetTYpeAlreadyExist;
 import com.zenika.soccerbetting.betting.domain.validate_bet.ChooseBetService;
 import com.zenika.soccerbetting.betting.domain.validate_bet.MoneyBetMustBeSupToZero;
 import com.zenika.soccerbetting.betting.domain.validate_bet.ValidateBet;
 import com.zenika.soccerbetting.betting.domain.bet.Bet;
 import com.zenika.soccerbetting.betting.domain.gambler.Gambler;
-import com.zenika.soccerbetting.betting.ports.InMemoryBetRepository;
-import com.zenika.soccerbetting.betting.ports.InMemoryGamblerRepository;
-import com.zenika.soccerbetting.betting.ports.InMemoryValidateBetRepository;
+import com.zenika.soccerbetting.betting.ports.stubs.InMemoryBetRepository;
+import com.zenika.soccerbetting.betting.ports.stubs.InMemoryGamblerRepository;
+import com.zenika.soccerbetting.betting.ports.stubs.InMemoryValidateBetRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -29,7 +30,8 @@ public class ChooseBetTest {
         String gbId = UUID.randomUUID().toString();
         GamblerId gamblerId = new GamblerId(gbId);
         String bId = UUID.randomUUID().toString();
-        Bet bet = new Bet(new BetId(bId), "Score");
+        MatchId matchId = new MatchId(UUID.randomUUID().toString());
+        Bet bet = new Bet(new BetId(bId), matchId,"Score");
         Gambler gambler = new Gambler(gamblerId);
 
         InMemoryBetRepository bREpo = new InMemoryBetRepository();
