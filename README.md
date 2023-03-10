@@ -7,7 +7,13 @@
 ![soccer_bet_event_storming](https://user-images.githubusercontent.com/14818169/203830273-438a9aeb-d652-425e-b53b-adb6771bd6b5.jpg)
 
 
-## Bounded Context Pari
+## Modelization light without aggregation
+
+
+![Formation DDD 23_11_2022_modelisation_simple](https://user-images.githubusercontent.com/14818169/224258760-91b19275-bbd2-4f4c-b4ab-c166d035242b.jpg)
+
+
+## Modelization Bounded Context Bet
 
 
 ![soccer_bet_bc_pari](https://user-images.githubusercontent.com/14818169/203829868-190a29aa-2b8e-4c85-84fe-fcdbca9f123d.jpg)
