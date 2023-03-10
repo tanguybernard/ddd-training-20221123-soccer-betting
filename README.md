@@ -1,10 +1,9 @@
 # ddd-training-20221123-soccer-betting
 
 
-
 ## Event Storming
 
-![soccer_bet_event_storming](https://user-images.githubusercontent.com/14818169/203830273-438a9aeb-d652-425e-b53b-adb6771bd6b5.jpg)
+![event_storming_23112022](https://user-images.githubusercontent.com/14818169/224263082-4d496474-20e7-43af-99f4-8b8817f994cf.jpg)
 
 
 ## Modelization light without aggregation
